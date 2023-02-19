@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">MyPetsApp</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="tituloRegistro">REGISTRO DE USUARIO</string>
+    <string name="nameUser">NOMBRE</string>
+    <string name="dniUser">DNI</string>
+    <string name="addressUser">DIRECCION</string>
+    <string name="emailUser">CORREO ELECTRONICO</string>
+    <string name="passwordUser">CONTRASEÑA</string>
+    <string name="btnRegisterUser">REGISTRARME</string>
+    <string name="tituloLogin">INTRODUZCA SUS DATOS DE INICIO DE SESIÓN</string>
+    <string name="btnIniciarSesion">INICIAR SESIÓN</string>
+    <string name="textRegistrarse">SI NO ESTA REGISTRADO, REGISTRESE AQUÍ</string>
+    <string name="textNamePet">NOMBRE</string>
+    <string name="textBreedPet">RAZA</string>
+    <string name="textAgePet">EDAD</string>
+    <string name="textColorPet">COLOR</string>
+    <string name="textPriceVacPet">VACUNA(€)</string>
+    <string name="tituloRegistroMascota">REGISTRO DE MASCOTAS</string>
+    <string name="btnRegisterPet">REGISTRAR</string>
+    <string name="titleHome">MIS MASCOTAS</string>
+    <string name="menu_create_pet">REGISTRAR MASCOTA</string>
+    <string name="myPetsAppMail">myPetsAPP@gmail.com</string>
+    <string name="title_app">MyPetsAPP</string>
+    <string name="textbtnEdit">Editar</string>
+    <string name="textBtnDelete">Borrar</string>
+    <string name="labelNamePet">NOMBRE :</string>
+    <string name="textBtnImagen">SUBIR IMAGEN</string>
+    <string name="cancel">CANCELAR</string>
+    <string name="save">GUARDAR</string>
+    <string name="si_desea_eliminar_esta_mascota_del_registro_pulse_aqui">SI DESEA ELIMINAR ESTA MASCOTA DEL REGISTRO PULSE AQUI</string>
+</resources>

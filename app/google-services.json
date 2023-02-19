@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "229629014952",
+    "project_id": "mypetsapp-app",
+    "storage_bucket": "mypetsapp-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:229629014952:android:19d3ef233106f09584e39d",
+        "android_client_info": {
+          "package_name": "com.ismael.mypetsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "229629014952-j5446eknqb6h0mqoj2mpvb0vq8mgl01e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoasaA44CU38MDLOqQWqbLiz5SqlSqM-A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "229629014952-j5446eknqb6h0mqoj2mpvb0vq8mgl01e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
