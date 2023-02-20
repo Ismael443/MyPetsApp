@@ -9,12 +9,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.ismael.mypetsapp.R
 import com.ismael.mypetsapp.databinding.FragmentHomeBinding
 import com.ismael.mypetsapp.model.Pet
 import com.ismael.mypetsapp.model.PetAdapter
 import com.ismael.mypetsapp.ui.detail.DetailPetFragment
+import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
 
@@ -41,8 +45,14 @@ class HomeFragment : Fragment() {
 
         //DEJAMOS OBSERVANDO LOS CAMBIOS QUE SE PRODUCEN EN EL VIEWMODEL
         viewModel.getResultList().observe(viewLifecycleOwner) {
-            adapter.pets = it
-            adapter.notifyDataSetChanged()
+            lifecycleScope.launch {
+                repeatOnLifecycle(Lifecycle.State.STARTED){
+                    viewModel.getResultList().value!!.collect{
+                        adapter.pets = it
+                        adapter.notifyDataSetChanged()
+                    }
+                }
+            }
         }
 
         return binding.root
