@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="10dp"
     android:background="#FFFFFF"
-    android:backgroundTint="#FFFFFF"
+    android:backgroundTint="#B9205871"
     app:cardCornerRadius="20dp"
     app:cardElevation="0dp">
 
@@ -21,6 +21,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="70dp"
             android:layout_height="70dp"
+            android:background="@drawable/rounded"
             app:cardCornerRadius="75dp"
             app:cardElevation="0dp">
 
@@ -28,8 +29,8 @@
                 android:id="@+id/photoPetView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/rounded"
-                app:srcCompat="@drawable/iconpet" />
+                app:srcCompat="@drawable/ic_launcher_foreground"
+                tools:ignore="ImageContrastCheck" />
         </androidx.cardview.widget.CardView>
 
         <Space
@@ -48,6 +49,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/textNamePet"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -62,7 +64,10 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/textBreedPet"
-                    android:textSize="16sp" />
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/textAgePet"
@@ -70,7 +75,10 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/textAgePet"
-                    android:textSize="16sp" />
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/textColorPet"
@@ -78,7 +86,10 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/textColorPet"
-                    android:textSize="16sp" />
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
             </LinearLayout>
 
         </LinearLayout>

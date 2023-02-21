@@ -1,8 +1,10 @@
-package com.ismael.mypetsapp
+package com.ismael.mypetsapp.ui
 
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 
 //METODOS PARA MOSTRAR MENSAJES DE ALERTAS QUE USAREMOS EN LAS DIFERENTES CLASES
 
@@ -18,4 +20,10 @@ fun AppCompatActivity.showMsg(title: String, textMsg: String) {
 
     val dialog = builder.create()
     dialog.show()
+}
+
+fun ImageView.loadUrl(url: String){
+    Glide.with(this)
+        .load(url)
+        .into(this)
 }

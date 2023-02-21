@@ -10,7 +10,9 @@ import androidx.navigation.fragment.findNavController
 import com.ismael.mypetsapp.R
 import com.ismael.mypetsapp.databinding.DetailPetBinding
 import com.ismael.mypetsapp.model.Pet
+import com.ismael.mypetsapp.ui.loadUrl
 
+@Suppress("DEPRECATION")
 class DetailPetFragment: Fragment(R.layout.detail_pet) {
 
     companion object { const val PET_SELECTED = "petSelected" }
@@ -31,18 +33,18 @@ class DetailPetFragment: Fragment(R.layout.detail_pet) {
 
         val currentUser = app.intent.extras!!.getString("email")
 
+        app.supportActionBar!!.title = "MASCOTA"
 
         //OBSERVAMOS SI LA MASCOTA SE MODIFICA
         viewModel.getPet().observe(viewLifecycleOwner) {
             pet = it
 
-            app.supportActionBar!!.title = "MASCOTA"
-
             binding.textNamePet.text = "NOMBRE : " + pet.nombre
             binding.textBreedPet.text = "RAZA : " + pet.raza
-            binding.textAgePet.text = "AÑOS : " + pet.edad.toString()
+            binding.textAgePet.text = "EDAD : " + pet.edad.toString() + " AÑOS"
             binding.textColorPet.text = "COLOR : " + pet.color
-            binding.textVaccinePet.text = "PRECIO VACUNA : " + pet.precioVacuna.toString()
+            binding.textVaccinePet.text = "PRECIO VACUNA : " + pet.precioVacuna.toString() + " €"
+            binding.photoPetDetail.loadUrl(pet.photoPet)
 
 
             binding.btnDeletePet.setOnClickListener {

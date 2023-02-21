@@ -4,99 +4,116 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="15sp"
+    android:layout_margin="5sp"
     android:background="@drawable/rounded"
-    android:backgroundTint="#BE605F57">
+    android:backgroundTint="#FF9800">
 
     <ImageView
         android:id="@+id/photoPetDetail"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/rounded"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circular_image"
+
         android:clipToOutline="true"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/iconpet"
+        app:layout_constraintTop_toBottomOf="@+id/titleDetailPet"
+        app:srcCompat="@drawable/ic_launcher_foreground"
         tools:targetApi="s" />
 
     <TextView
         android:id="@+id/titleDetailPet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
-        android:text="TARJETA DE IDENTIFICACIÓN"
+        android:text="@string/tarjeta_de_identificaci_n"
+        android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
 
     <TextView
         android:id="@+id/textNamePet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="5dp"
         android:text="@string/textNamePet"
         android:textColor="@color/black"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textBreedPet"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleDetailPet" />
+        app:layout_constraintTop_toBottomOf="@+id/photoPetDetail"
+        app:layout_constraintVertical_bias="0.5" />
 
     <TextView
         android:id="@+id/textBreedPet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="5dp"
         android:text="@string/textBreedPet"
         android:textColor="@color/black"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textAgePet"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textNamePet" />
-
+        app:layout_constraintTop_toBottomOf="@+id/textNamePet"
+        app:layout_constraintVertical_bias="0.5" />
 
     <TextView
         android:id="@+id/textAgePet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="1dp"
         android:text="@string/textAgePet"
         android:textColor="@color/black"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textColorPet"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textBreedPet" />
+        app:layout_constraintTop_toBottomOf="@+id/textBreedPet"
+        app:layout_constraintVertical_bias="0.5" />
 
     <TextView
         android:id="@+id/textColorPet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="5dp"
         android:text="@string/textColorPet"
         android:textColor="@color/black"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textVaccinePet"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textAgePet" />
+        app:layout_constraintTop_toBottomOf="@+id/textAgePet"
+        app:layout_constraintVertical_bias="0.5" />
 
     <TextView
         android:id="@+id/textVaccinePet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="5dp"
         android:text="@string/textPriceVacPet"
         android:textColor="@color/black"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnDeletePet"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textColorPet" />
-
+        app:layout_constraintTop_toBottomOf="@+id/textColorPet"
+        app:layout_constraintVertical_bias="0.5" />
 
     <Button
         android:id="@+id/btnDeletePet"
@@ -105,10 +122,11 @@
         android:layout_marginBottom="28dp"
         android:backgroundTint="#FB0000"
         android:drawableLeft="@drawable/ic_delete"
-        android:text="@string/textBtnDelete"
         android:gravity="center"
+        android:text="@string/textBtnDelete"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

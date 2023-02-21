@@ -43,6 +43,7 @@ class HomeFragment : Fragment() {
         val adapter = PetAdapter {pet -> navigateTo(pet)}
         binding.recycler.adapter = adapter
 
+
         //DEJAMOS OBSERVANDO LOS CAMBIOS QUE SE PRODUCEN EN EL VIEWMODEL
         viewModel.getResultList().observe(viewLifecycleOwner) {
             lifecycleScope.launch {

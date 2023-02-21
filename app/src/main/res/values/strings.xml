@@ -38,4 +38,7 @@
     <string name="cancel">CANCELAR</string>
     <string name="save">GUARDAR</string>
     <string name="si_desea_eliminar_esta_mascota_del_registro_pulse_aqui">SI DESEA ELIMINAR ESTA MASCOTA DEL REGISTRO PULSE AQUI</string>
+    <string name="cargar_imagen">CARGAR IMAGEN</string>
+    <string name="pinche_aqui">PINCHE AQUI</string>
+    <string name="tarjeta_de_identificaci_n">TARJETA DE IDENTIFICACIÓN</string>
 </resources>

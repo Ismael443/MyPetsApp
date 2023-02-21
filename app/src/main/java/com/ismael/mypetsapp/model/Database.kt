@@ -1,10 +1,12 @@
+@file:Suppress("unused")
+
 package com.ismael.mypetsapp.model
 
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.snapshots
-import com.ismael.mypetsapp.showMsg
+import com.ismael.mypetsapp.ui.showMsg
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.tasks.await
@@ -15,11 +17,11 @@ object Database {
     private const val COLLECTION_PETS = "mascotas"
 
 
-    private fun database(): FirebaseFirestore = FirebaseFirestore.getInstance()
-
     //OBTENEMOS LAS MASCOTAS DEL USUARIO ACTUAL
+    //ESTA FUNCIÓN YA NO LA UTILIZAMOS DEBIDO A QUE UTILIZAMOS FLOW PARA MANTENER ESCUCHANDO
+    //AL ADAPTER LOS CAMBIOS QUE SE PRODUZCAN EN EL RECYCLER
     suspend fun getPetsFromUser(email: String): List<Pet> {
-        val db = database()
+        val db = FirebaseFirestore.getInstance()
         val instance = db.collection(COLLECTION_USERS).document(email).collection(COLLECTION_PETS).get().await()
         val pets = mutableListOf<Pet>()
 
@@ -33,7 +35,7 @@ object Database {
 
     //FUNCIÓN PARA CREAR UN USUARIO Y PODER AÑADIRLO A LA BASE DE DATOS
     fun createUser(user: User, app: AppCompatActivity) {
-        val db = database()
+        val db = FirebaseFirestore.getInstance()
         val userData = hashMapOf(
             "dni" to user.dni,
             "nombre" to user.nombre,
@@ -54,16 +56,10 @@ object Database {
 
     //CREACION DE UN OBJETO MASCOTA
     fun createPet(pet: Pet, currentUser: String, app: AppCompatActivity) {
-        val db = database()
-        val petData = hashMapOf(
-            "nombre" to pet.nombre,
-            "raza" to pet.raza,
-            "edad" to pet.edad,
-            "color" to pet.color,
-            "precio_vacuna" to pet.precioVacuna)
+        val db = FirebaseFirestore.getInstance()
 
         db.collection(COLLECTION_USERS).document(currentUser).collection(COLLECTION_PETS).document(pet.nombre)
-            .set(petData).addOnCompleteListener {
+            .set(pet).addOnCompleteListener {
 
                 //SI LA MASCOTA SE CREO CORRECTAMENTE
                 if (it.isSuccessful)
@@ -74,7 +70,7 @@ object Database {
     }
 
     fun deletePet(pet: Pet, currentUser: String, app: AppCompatActivity) {
-        val db = database()
+        val db = FirebaseFirestore.getInstance()
 
         db.collection(COLLECTION_USERS).document(currentUser).collection(COLLECTION_PETS).document(pet.nombre)
             .delete().addOnCompleteListener {

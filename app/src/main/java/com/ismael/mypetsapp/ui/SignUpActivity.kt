@@ -5,10 +5,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.ismael.mypetsapp.databinding.ActivitySignupBinding
-import com.ismael.mypetsapp.emptyToast
 import com.ismael.mypetsapp.model.Database
 import com.ismael.mypetsapp.model.User
-import com.ismael.mypetsapp.showMsg
 
 class SignUpActivity : AppCompatActivity() {
 
